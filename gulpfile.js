@@ -10,7 +10,6 @@ var imagemin = require( 'gulp-imagemin' );
 var koutoSwiss = require( 'kouto-swiss' );
 var jade = require( 'gulp-jade' );
 var jeet = require( 'jeet' );
-var jsHint = require( 'gulp-jshint' );
 var map = require( 'map-stream' );
 var plumber = require('gulp-plumber');
 var rename = require( 'gulp-rename' );
@@ -43,18 +42,6 @@ var eternalBlossoms = {
     dist: 'dist/'
 };
 
-var myReporter = map(function (file, cb) {
-  if (!file.jshint.success) {
-    console.log('JSHINT fail in '+file.path);
-    file.jshint.results.forEach(function (err) {
-      if (err) {
-        console.log(' '+file.path + ': line ' + err.line + ', col ' + err.character + ', code ' + err.code + ', ' + err.reason);
-      }
-    });
-  }
-  cb(null, file);
-});
-
 // Clear folder dist
 
 gulp.task( 'clean', function() {
@@ -70,7 +57,7 @@ gulp.task( 'css', function() {
         .pipe( sourceMaps.init() )
         .pipe( stylus( {
             use: [koutoSwiss(), autoprefixer('> 0%'), jeet(), rupture()],
-            compress: false
+            compress: true
         } ) )
         .pipe( sourceMaps.write( './' ) )
         .pipe( plumber.stop() )
@@ -84,19 +71,27 @@ gulp.task( 'css', function() {
 
 gulp.task( 'jade', function() {
     gulp.src( jadeForest.jade )
+        .pipe( plumber() )
         .pipe( jade( {
-            pretty: true
+            pretty: false
         } ) )
+        .pipe( plumber.stop() )
         .pipe( gulp.dest( kunlaiSummit.dev ) );
 } );
 
-// lint javascript
+// Javascript
 
-gulp.task( 'lint', function() {
-  return gulp.src( jadeForest.js )
-    .pipe( jsHint() )
-    .pipe( myReporter );
-} );
+gulp.task( 'javascript', function() {
+    gulp.src( jadeForest.js )
+      .pipe( plumber() )
+      .pipe( sourceMaps.init() )
+      .pipe( concat( 'main.js' ))
+      .pipe( gulp.dest( kunlaiSummit.js) )
+      .pipe( uglify() )
+      .pipe( sourceMaps.write( './' ) )
+      .pipe( plumber.stop() )
+      .pipe( gulp.dest( kunlaiSummit.js) );
+});
 
 // Image Min
 
@@ -121,9 +116,10 @@ gulp.task( 'browserSync', function() {
 
 // Watch files... PULL THE BOSS!!
 
-gulp.task( 'pullTheBoss', ['css', 'jade', 'image', 'browserSync'], function() {
+gulp.task( 'pullTheBoss', ['css', 'javascript', 'jade', 'image', 'browserSync'], function() {
     gulp.watch( jadeForest.css, ['css'] );
     gulp.watch( jadeForest.jade, ['jade'] );
+    gulp.watch( jadeForest.js, ['javascript'] );
     gulp.watch( jadeForest.img, ['image'] );
     gulp.watch( jadeForest.html, browserSync.reload );
 } );

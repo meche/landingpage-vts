@@ -1,19 +1,30 @@
 footer.footer-content
-	section.volts-footer
+	div.volts-footer
 		div.volts-address
-			img(src="")
-			p Rua Otto Benack, 300 - Sala 2 Bom Retiro - Joinville / SC
+			img.volts-address__icon(src="images/icon-address.png" alt="Ícone do Endereço Volts")
+			p.volts-address__text Rua Otto Benack, 300 - Sala 2 Bom Retiro - Joinville / SC
 		div.volts-telephone
-			img(src="")
-			p Entre em contato: <span>(47) 3043-4082</span>
+			img.volts-telephone__icon(src="images/icon-phone.png" alt="Ícone do Telefone Volts")
+			p.volts-telephone__text Entre em contato: <span class="volts-telephone__phone">(47) 3043-4082</span>
 		div.volts-social
-			p Acompanhe-nos:
-			ul
-				li facebook
-				li twitter
-				li linkedin
-				li google plus
-				li youtube
-	section.volts-devs
-		p Desenvolvido por
-		img(src="")
+			p.volts-social__text Acompanhe-nos:
+			ul.volts-social-list
+				li.volts-social-list__item
+					a(href="#")
+						img(src="images/icon-facebook.png" alt="Ícone facebook")
+				li.volts-social-list__item
+					a(href="#")
+						img(src="images/icon-twitter.png" alt="Ícone twitter")
+				li.volts-social-list__item
+					a(href="#")
+						img(src="images/icon-linkedin.png" alt="Ícone linkedin")
+				li.volts-social-list__item
+					a(href="#")
+						img(src="images/icon-google.png" alt="Ícone google")
+				li.volts-social-list__item
+					a(href="#")
+						img(src="images/icon-youtube.png" alt="Ícone youtube")
+
+	small.volts-devs
+		p.volts-devs__text Desenvolvimento:
+		img.volts-devs__icon(src="images/icon-volts.png" alt="Desenvolvido por Volts Digital")

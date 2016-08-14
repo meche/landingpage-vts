@@ -9,8 +9,8 @@
 	justify-content space-between
 	align-items center
 	padding 0 10px
-	+below(wrap-container)
-		width 100%
+	+below(breakpoint-menu)
+		overflow hidden
 	&::before
 		content (' ')
 		position absolute
@@ -23,26 +23,53 @@
 
 .menu-list
 	list-style none
+	display flex
+	flex-flow row nowrap
+	justify-content space-between
+	align-items center
 	padding 0
+	+below(breakpoint-menu)
+		position fixed
+		top 0
+		right 0
+		width 220px
+		height 100%
+		background-color grey-card
+		flex-flow column wrap
+		justify-content flex-start
+		align-items flex-start
+		z-index 9999
 	+e(item)
-		display inline-block
+		// display inline-block
 		text-transform uppercase
+		+below(breakpoint-menu)
+			width 100%
+			padding 20px
+		&:hover
+			+below(breakpoint-menu)
+				background-color rgba( 255, 255, 255, 0.5)
 		&::before
 			content ('|')
 			color grey-complement
 			font-size 14px
 			padding 0 20px
+			+below(breakpoint-menu)
+				display none
 		+m(first)
+			+below(breakpoint-menu)
+				padding-top 20px
 			&::before
 				content (' ')
 		+m(last)
 			&::after
-				content ('->')
+				content ('→')
 				padding 0 15px 0 0
 		a
 			text-decoration none
 			color black-volts
 			font-size 14px
 			font-weight 600
+			+below(breakpoint-menu)
+				color white-volts
 			&:hover
 				color yellow-volts
