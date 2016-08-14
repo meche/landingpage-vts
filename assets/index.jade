@@ -12,9 +12,11 @@ html(class="no-js" lang="pt-br")
   body
     include ./components/menu
     include ./components/header
-    include ./components/aboutus
-    include ./components/jobs
-    include ./components/apply
+    main
+      include ./components/aboutus
+      include ./components/jobs
+      include ./components/apply
+    include ./components/footer
     script(
       src="https://use.typekit.net/avj5uih.js"
     )

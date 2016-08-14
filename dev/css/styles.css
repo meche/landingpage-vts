@@ -34,7 +34,9 @@ body {
 .about-us-content,
 .about-us-details,
 .open-jobs,
-.list-jobs {
+.list-jobs,
+.apply-header,
+.apply-resume {
   width: 960px;
   margin: 0 auto;
 }
@@ -45,7 +47,9 @@ body {
   .about-us-content,
   .about-us-details,
   .open-jobs,
-  .list-jobs {
+  .list-jobs,
+  .apply-header,
+  .apply-resume {
     width: 100%;
   }
 }
@@ -141,7 +145,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 5px;
   background-color: #fbc645;
   -webkit-border-radius: 0 0 15px 15px;
      -moz-border-radius: 0 0 15px 15px;
@@ -263,10 +267,10 @@ body {
 .about-us-details::before {
   content: ' ';
   position: absolute;
-  top: -15px;
+  top: -10px;
   left: 0;
   width: 100%;
-  height: 15px;
+  height: 10px;
   background-color: #fff;
   -webkit-border-radius: 15px 15px 0 0;
      -moz-border-radius: 15px 15px 0 0;
@@ -500,10 +504,80 @@ body {
 }
 .jobs-details-card .thumbnail-card__button {
   position: absolute;
-  bottom: -5px;
-  right: -10px;
-  width: 44px;
-  height: 44px;
+  bottom: 0px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+}
+.apply {
+  width: 100%;
+}
+.apply-header {
+  position: relative;
+}
+.apply-header::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+  -webkit-border-radius: 15px 15px 0 0;
+     -moz-border-radius: 15px 15px 0 0;
+          border-radius: 15px 15px 0 0;
+}
+.apply-header__title {
+  padding: 60px 0 40px 0;
+  color: #333;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.apply-content {
+  width: 100%;
+  background-color: #fbc645;
+}
+.apply-resume {
+  padding: 60px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  -moz-box-align: stretch;
+   -ms-flex-align: stretch;
+       align-items: stretch;
+}
+.apply-resume .apply-details {
+  width: 40.625%;
+}
+.apply-resume .apply-details__title {
+  width: 100%;
+  height: auto;
+}
+.apply-resume .apply-details__text {
+  max-width: 378px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.apply-resume .apply-details__arrow {
+  float: right;
 }
 
 /*# sourceMappingURL=styles.css.map */
