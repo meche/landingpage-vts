@@ -1,0 +1,19 @@
+.top-header
+	position relative
+	width 100%
+	background-image url('../images/background-top.jpg')
+	background-size cover
+	background-position center
+	border-top 5px solid grey-complement
+	border-bottom 10px solid black-volts
+
+.header-content
+	@extends .wrap-content
+	display flex
+	flex-flox row nowrap
+	justify-content space-between
+	align-items center
+	+e(image)
+		width percentage( 429 / 960 )
+	+e(brand)
+		width percentage( 548/ 960 )

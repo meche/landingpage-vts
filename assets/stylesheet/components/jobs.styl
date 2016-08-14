@@ -1,0 +1,102 @@
+.jobs
+	position relative
+	width 100%
+
+.wrap-open-jobs
+	width 100%
+	background-color grey-about
+	padding-top: 60px
+	border-top: 10px solid black-volts
+.open-jobs
+	@extends .wrap-content
+	+e(title)
+		width percentage( 405 /960 )
+		height auto
+	+e(text)
+		@extends .about-us-content__text
+		color white-volts
+		margin-top 30px
+
+.wrap-list-jobs
+	width 100%
+	padding 60px 0
+	background-color white-jobs
+
+.list-jobs
+	@extends .wrap-content
+
+.jobs-details
+	width 100%
+	display flex
+	flex-flow row wrap
+	justify-content space-between
+	align-items flex-start
+	margin-bottom 30px
+
+.jobs-details-date
+	width 117px
+	height 117px
+	display flex
+	flex-flow column wrap
+	justify-content center
+	align-items center
+	background-color yellow-volts
+	border-radius 50% 50%
+	border 3px solid white-volts
+	+e(daymouth)
+		font-size 34px
+		font-weight 700
+		color grey-card
+	+e(year)
+		font-size 20px
+		color white-volts
+
+.jobs-details-card
+	position relative
+	width percentage( 790 / 960 )
+	background-color white-volts
+	display flex
+	flex-flow row wrap
+	justify-content space-between
+	align-items flex-start
+	padding 30px
+	border-radius 15px
+	&::after
+		right 100%
+		top 20%
+		border solid transparent
+		content " "
+		height 0
+		width 0
+		position absolute
+		pointer-events none
+		border-color rgba(255, 255, 255, 0)
+		border-right-color #ffffff
+		border-width 15px
+		margin-top -15px
+	.details-card
+		width percentage(559 / 790)
+		+e(title)
+			font-size 20px
+			font-weight 700
+			text-transform uppercase
+		+e(job)
+			font-size 16px
+			font-weight 700
+			margin-bottom 30px
+		+e(description)
+			font-size 14px
+			line-height 24px
+			margin-bottom 15px
+	.thumbnail-card
+		position relative
+		width percentage( 180/790 )
+		+e(thumb)
+			width 100%
+			height auto
+		+e(button)
+			position absolute
+			bottom -5px
+			right -10px
+			width 44px
+			height 44px

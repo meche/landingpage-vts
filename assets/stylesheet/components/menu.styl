@@ -1,0 +1,48 @@
+@import 'rupture'
+
+.menu
+	@extends .wrap-content
+	position relative
+	height 90px
+	display flex
+	flex-flow row wrap
+	justify-content space-between
+	align-items center
+	padding 0 10px
+	+below(wrap-container)
+		width 100%
+	&::before
+		content (' ')
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 3px
+		background-color yellow-volts
+		border-radius 0 0 15px 15px
+
+.menu-list
+	list-style none
+	padding 0
+	+e(item)
+		display inline-block
+		text-transform uppercase
+		&::before
+			content ('|')
+			color grey-complement
+			font-size 14px
+			padding 0 20px
+		+m(first)
+			&::before
+				content (' ')
+		+m(last)
+			&::after
+				content ('->')
+				padding 0 15px 0 0
+		a
+			text-decoration none
+			color black-volts
+			font-size 14px
+			font-weight 600
+			&:hover
+				color yellow-volts
