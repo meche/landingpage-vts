@@ -9,6 +9,9 @@
 	justify-content space-between
 	align-items center
 	padding 20px 0
+	+below(breakpoint-footer)
+		flex-flow column wrap
+		justify-content center
 	&::before
 		content ' '
 		position absolute
@@ -25,6 +28,8 @@
 	flex-flow row wrap
 	justify-content space-between
 	align-items center
+	+below(breakpoint-footer)
+		margin-bottom 25px
 	+e(text)
 		max-width 186px
 		font-size 14px
@@ -37,6 +42,8 @@
 	justify-content space-between
 	align-items center
 	text-align center
+	+below(breakpoint-footer)
+		margin-bottom 25px
 	+e(text)
 		max-width 126px
 		font-size 12px
@@ -53,6 +60,9 @@
 	flex-flow row nowrap
 	justify-content space-between
 	align-items center
+	+below(breakpoint-footer)
+		flex-flow column wrap
+		justify-content center
 	+e(text)
 		font-size 13px
 		font-weight 400
