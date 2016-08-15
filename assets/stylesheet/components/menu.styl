@@ -22,6 +22,7 @@
 		border-radius 0 0 15px 15px
 
 .menu-list
+	position relative
 	list-style none
 	display flex
 	flex-flow row nowrap
@@ -38,7 +39,14 @@
 		flex-flow column wrap
 		justify-content flex-start
 		align-items flex-start
+		transition 500ms ease
 		z-index 9999
+	&::before
+		+below(breakpoint-menu)
+			content ' MENU '
+			position absolute
+			top 25px
+			left -50px
 	+e(item)
 		// display inline-block
 		text-transform uppercase
@@ -47,7 +55,7 @@
 			padding 20px
 		&:hover
 			+below(breakpoint-menu)
-				background-color rgba( 255, 255, 255, 0.5)
+				background-color white-alpha
 		&::before
 			content ('|')
 			color grey-complement
@@ -73,3 +81,9 @@
 				color white-volts
 			&:hover
 				color yellow-volts
+.acitve
+	+below(breakpoint-menu)
+		transform translateX(0%)
+.hidden
+	+below(breakpoint-menu)
+		transform translateX(100%)
