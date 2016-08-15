@@ -5,6 +5,8 @@
 .about-us-content
 	@extends .wrap-content
 	color white-volts
+	+below(wrap-container)
+		padding 16px
 	+e(title)
 		text-align center
 		font-size 40px
@@ -25,6 +27,10 @@
 	flex-flow row wrap
 	justify-content space-between
 	align-items stretch
+	+below(breakpoint-about-us-card)
+		flex-flow column wrap
+		justify-content center
+		align-items center
 	&::before
 		content ' '
 		position absolute
@@ -42,6 +48,9 @@
 	flex-flow column wrap
 	justify-content flex-start
 	align-items center
+	text-align center
+	+below(breakpoint-about-us-card)
+		width 90%
 	+m(last)
 		width percentage( 780 / 960 )
 		margin 0 auto
@@ -68,3 +77,8 @@
 		margin-bottom 60px
 		border 1px solid grey-complement
 		border-radius 15px
+		+below(breakpoint-about-us-card)
+			justify-content center
+		+m(item)
+			+below(breakpoint-about-us-card)
+				padding 5px
