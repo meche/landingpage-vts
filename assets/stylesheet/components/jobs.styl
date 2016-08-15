@@ -7,11 +7,16 @@
 	background-color grey-about
 	padding-top: 60px
 	border-top: 10px solid black-volts
+
 .open-jobs
 	@extends .wrap-content
+	+below(breakpoint-jobs)
+		padding 16px
 	+e(title)
 		width percentage( 405 /960 )
 		height auto
+		+below(breakpoint-jobs)
+			width 60%
 	+e(text)
 		@extends .about-us-content__text
 		color white-volts
@@ -32,6 +37,10 @@
 	justify-content space-between
 	align-items flex-start
 	margin-bottom 30px
+	+below(breakpoint-jobs)
+		flex-flow column wrap
+		justify-content center
+		align-items center
 
 .jobs-details-date
 	width 117px
@@ -60,7 +69,12 @@
 	justify-content space-between
 	align-items flex-start
 	padding 30px
+	margin-top 15px
 	border-radius 15px
+	+below(breakpoint-jobs-card)
+		flex-flow column wrap
+		justify-content center
+		align-items center
 	&::after
 		right 100%
 		top 20%
@@ -71,15 +85,34 @@
 		position absolute
 		pointer-events none
 		border-color rgba(255, 255, 255, 0)
-		border-right-color #ffffff
+		border-right-color white-volts
 		border-width 15px
 		margin-top -15px
+		+below(breakpoint-jobs)
+				top -4%
+				bottom 100%
+				left 50%
+				border-color rgba(255, 255, 255, 0)
+				border-bottom-color white-volts
+				border-width 15px
+				margin-left -15px
+		+below(breakpoint-jobs-card)
+			top -2%
 	.details-card
 		width percentage(559 / 790)
+		+below(breakpoint-jobs-card)
+			width 80%
+			display flex
+			flex-direction column
+			justify-content center
+			align-items center
+			text-align center
 		+e(title)
 			font-size 20px
 			font-weight 700
 			text-transform uppercase
+			+below(breakpoint-jobs-card)
+				margin-top 25px
 		+e(job)
 			font-size 16px
 			font-weight 700
@@ -91,6 +124,8 @@
 	.thumbnail-card
 		position relative
 		width percentage( 180/790 )
+		+below(breakpoint-jobs-card)
+			width 40%
 		+e(thumb)
 			width 100%
 			height auto

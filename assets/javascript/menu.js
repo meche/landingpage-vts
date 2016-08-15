@@ -3,9 +3,8 @@
 
 	var menu = document.querySelector('.menu-list')
 
-	menu.addEventListener('click', function (element) {
+	menu.addEventListener('click', function () {
 		if (menu.classList.contains('hidden')) {
-		  // The box that we clicked has a class of bad so let's remove it and add the good class
 		  setTimeout(function () {
 			  menu.classList.remove('hidden')
 			  menu.classList.add('active')
