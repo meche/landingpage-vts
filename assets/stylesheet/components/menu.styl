@@ -43,10 +43,15 @@
 		z-index 9999
 	&::before
 		+below(breakpoint-menu)
-			content ' MENU '
+			content url('../images/menu.png')
 			position absolute
-			top 25px
-			left -50px
+			top 30px
+			left -40px
+			width 32px
+			height 32px
+			background-color white-volts
+			border-radius 50% 50%
+			cursor pointer
 	+e(item)
 		// display inline-block
 		text-transform uppercase
