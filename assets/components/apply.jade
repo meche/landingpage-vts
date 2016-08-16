@@ -13,4 +13,68 @@ section.apply
 				p.apply-details__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quom placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui faorum claritatem. Nam liber tempor cum soluta nobis eleifend option congue.
 				img.apply-details__arrow(src="images/arrow.png" alt="Indicação ao campo de envio do currículo")
 
-			div.apply-form
+			form.apply-form
+				.field-apply
+					.field-apply__label Seu nome:
+					input.field-apply__input(id="your-name" type="text")
+				.field-apply
+					.field-apply__label Seu email:
+					input.field-apply__input(id="your-email" type="email")
+				.field-apply
+					.field-apply__label Seu telefone:
+					input.field-apply__input.field-apply__input--ddd(id="your-phone-ddd" type="text")
+					input.field-apply__input.field-apply__input--half(id="your-phone" type="text")
+				.field-apply
+					.field-apply__label.field-apply__label--checkbox Grau de experiência:
+					.checkbox-apply
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="com-experiencia" type="checkbox" name="experience" value="Com experiência")
+							label(for="com-experiencia") Com experiência
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="estagio" type="checkbox" name="experience" value="Estágio")
+							label(for="estagio") Estágio
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="sem-experiencia"  type="checkbox" name="experience" value="Sem experiência")
+							label(for="sem-experiencia") Sem experiência
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="menor-aprendiz" type="checkbox" name="experience" value="Menor aprendiz")
+							label(for="menor-aprendiz") Menor aprendiz
+				.field-apply
+					.field-apply__label.field-apply__label--checkbox Sua área de interesse:
+					.checkbox-apply
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="marketing" type="checkbox" name="interest" value="Marketing")
+							label(for="marketing") Marketing
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="vendas-internas" type="checkbox" name="interest" value="Vendas Internas")
+							label(for="vendas-internas") Vendas Internas
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="comunicacao"  type="checkbox" name="interest" value="Comunicação")
+							label(for="comunicacao") Comunicação
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="vendas-externas" type="checkbox" name="interest" value="Vendas Externas")
+							label(for="vendas-externas") Vendas Externas
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="engenharia" type="checkbox" name="interest" value="Engenharia")
+							label(for="engenharia") Engenharia
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="administrativo" type="checkbox" name="interest" value="Administrativo")
+							label(for="administrativo") Administrativo
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="logistica" type="checkbox" name="interest" value="Logística")
+							label(for="logistica") Logística
+						.checkbox-apply__group
+							input.checkbox-apply__input(id="comercio-exterior" type="checkbox" name="interest" value="Comércio Exterior")
+							label(for="comercio-exterior") Comércio Exterior
+				.field-apply
+					.field-apply__label Pretensão salarial:
+					input.field-apply__input.field-apply__input--half(id="your-salary" type="text")
+				.field-apply
+					.field-apply__label.field-apply__label--resume Anexe seu currículo:
+					input.field-apply__input.field-apply__input--half(id="resume-file" name="resume-file" disabled="disabled")
+					.file-apply.btn.btn-search
+						label(for="upload-resume") Buscar
+						input.file-apply__upload(id="upload-resume" type="file")
+				.field-apply
+					.field-apply__label
+					input.btn.btn-search(type="submit" value="Me candidatar agora")

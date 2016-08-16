@@ -62,4 +62,88 @@
 			+below(breakpoint-apply)
 				display none
 
+.apply-form
+	width percentage( 515 / 960 )
+	+below(breakpoint-apply-form)
+		width 90%
 
+.field-apply
+	width 100%
+	display flex
+	flex-flow row wrap
+	align-items center
+	margin-bottom 15px
+	+e(label)
+		width percentage( 160 / 515 )
+		margin-right 15px
+		color grey-about
+		font-size 15px
+		font-weight 600
+		text-align right
+		text-transform capitalize
+		+below(wrap-container)
+			width 100%
+			text-align left
+		+m(checkbox)
+			align-self flex-start
+		+m(resume)
+			font-size 18px
+			font-weight 700
+	+e(input)
+		width percentage( 300 / 515 )
+		padding 10px
+		border 0
+		border-radius 7px
+		+below(breakpoint-apply)
+			width 100%
+		+m(ddd)
+			width percentage( 50 / 515 )
+			margin-right 15px
+			+below(breakpoint-apply)
+				width 20%
+		+m(half)
+			width percentage( 120 / 515 )
+			+below(breakpoint-apply)
+				width 50%
+
+.checkbox-apply
+	width percentage( 320 / 515)
+	display flex
+	flex-flow row wrap
+	+below(wrap-container)
+		width 100%
+	+e(input)
+		width 15px
+		height 15px
+		background-color white-volts
+		margin-right 10px
+		border-radius 3px
+		appearance none
+	+e(group)
+		width 45%
+		display flex
+		flex-flow row wrap
+		justify-content flex-start
+		align-items center
+		margin-right 15px
+		margin-bottom 10px
+		color grey-about
+		font-size 14px
+		font-weight 600
+		text-align right
+		+below(breskpoint-apply-mobile)
+			width 100%
+
+.checkbox-apply input:checked
+	background-image url('../images/checked.png')
+	background-size cover
+
+.file-apply
+	+e(upload)
+		display none
+
+
+// Brenda's code
+// m,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+//  bjjjjjjjjjjjjjjjjjjjjjjjjj
