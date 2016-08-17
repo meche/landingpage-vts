@@ -2,6 +2,7 @@
 	'use strict'
 
 	var menu = document.querySelector('.menu-list')
+	var menuGlobal = document.querySelector('.header-menu')
 
 	menu.addEventListener('click', function () {
 		if (menu.classList.contains('hidden')) {
@@ -18,4 +19,11 @@
 		}
 	})
 
+	window.onscroll = function () {
+		if (window.pageYOffset > 200) {
+			menuGlobal.classList.add('menu-fixed')
+		} else {
+			menuGlobal.classList.remove('menu-fixed')
+		}
+	}
 })();
